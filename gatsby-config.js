@@ -5,8 +5,9 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
     {
-      resolve: `gatsby-plugin-react-helmet`,
+      resolve: `gatsby-plugin-noop`,
       options: {
         ___level_1_1: [1, '2'], // This is fine
         ___level_1_2: [1, { value: '2' }], // This is fine
