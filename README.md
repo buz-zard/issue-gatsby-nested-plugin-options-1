@@ -1,0 +1,1 @@
+# issue-gatsby-nested-plugin-options-1
