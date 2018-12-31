@@ -5,7 +5,22 @@ module.exports = {
     author: `@gatsbyjs`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-react-helmet`,
+      options: {
+        ___level_1_1: [1, '2'], // This is fine
+        ___level_1_2: [1, { value: '2' }], // This is fine
+        ___level_1_3: {
+          level_2_1: [1, 2], // This is fine
+          level_2_2: ['1', '2'], // This is fine
+          level_2_3: [{ value_a: 1 }, { value_b: '2' }], // This is fine
+        },
+        ___level_1_4: {
+          level_2_1: [1, '2'], // This throws
+          // level_2_2: [1, { value: '2' }], // This throws
+        },
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
